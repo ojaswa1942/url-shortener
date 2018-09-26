@@ -4,18 +4,16 @@ import React from 'react';
 const Form = ({onInput, onClick, onKey}) =>{
 	return(
 		<div className="">
-{	//		<p className="f3">
-// 				{'This Magic Brain will detect faces in your pictures. Give it a try'}
-// 			</p>
-// 			<div className='center'>
-// 				<div className='form gradient-pattern center pa4 br3 shadow-2 w-60'>
-// 					<input type='text' className='f4 pa2 w-70 center' 
-// 					onKeyPress={onKey} 
-// 					onChange={onInput} />
-// 					<button onClick={onClick} className='w-30 grow f4 link ph3 pv2 dib white bg-orange'>Detect</button>
-// 				</div>
-// 			</div>
-}
+
+			<div className='center pv6'>
+				<div className='form gradient-pattern center pa4 br3 shadow-2 w-60'>
+					<input type='text' placeholder='Enter URL here' 
+					className='f4 pa2 w-70 center' 
+					onKeyPress={onKey} 
+					onChange={onInput} />
+					<button onClick={onClick} className='w-30 grow f4 link ph3 pv2 dib dark-gray bg-gold'>Detect</button>
+				</div>
+			</div>
 		</div>		
 	);
 }
