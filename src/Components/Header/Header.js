@@ -3,20 +3,20 @@ import React from 'react';
 
 const Header = ({onInput, onClick, onKey}) =>{
 	return(
-		<div className="">
-{	//		<p className="f3">
-// 				{'This Magic Brain will detect faces in your pictures. Give it a try'}
-// 			</p>
-// 			<div className='center'>
-// 				<div className='form gradient-pattern center pa4 br3 shadow-2 w-60'>
-// 					<input type='text' className='f4 pa2 w-70 center' 
-// 					onKeyPress={onKey} 
-// 					onChange={onInput} />
-// 					<button onClick={onClick} className='w-30 grow f4 link ph3 pv2 dib white bg-orange'>Detect</button>
-// 				</div>
-// 			</div>
-}
-		</div>		
+		<header className="bg-gold sans-serif">
+			<div className="mw9 center pa3 pt5-ns ph7-l pb1">
+			  {//<time class="f6 mb2 dib ttu tracked"><small>27 July, 2015</small></time>
+			}
+			  <h3 className="f2 f1-m f-headline-l measure-narrow lh-title mv0">
+			    <span className="bg-black-90 lh-copy white pa1 tracked-tight">
+			      Cut the Crap
+			    </span>
+			  </h3>
+			  <h4 className="f3 fw1 georgia i">Shorten those long URLs for convenience.</h4>
+			  {//<h5 className="f6 ttu tracked black-80">By Ojaswa Sharma</h5>
+			}
+			</div>
+  		</header>
 	);
 }
 export default Header;
