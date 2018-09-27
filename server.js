@@ -8,13 +8,12 @@ const fetch = require('./controllers/fetch');
 const db = knex({
   client: 'pg',
   connection: {
-  	// connectionString: process.env.DATABASE_URL,
-  	// ssl: true
-    host : 'localhost',
-    port: 5432,
-    user : 'ojaswa',
-    password : 'ojaswa',
-    database : 'trimlink'
+  	connectionString: process.env.DATABASE_URL,
+  	ssl: true,
+    // host : 'localhost',
+    // user : 'ojaswa',
+    // password : 'ojaswa',
+    // database : 'trimlink'
   }
 });
 
