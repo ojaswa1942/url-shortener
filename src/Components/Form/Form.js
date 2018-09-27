@@ -5,13 +5,13 @@ const Form = ({onInput, onClick, onKey}) =>{
 	return(
 		<div className="">
 
-			<div className='center pv6'>
-				<div className='form gradient-pattern center pa4 br3 shadow-2 w-60'>
+			<div className='center '>
+				<div className='form gradient-pattern center pa4 mw8'>
 					<input type='text' placeholder='Enter URL here' 
-					className='f4 pa2 w-70 center' 
+					className='mv1 f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns' 
 					onKeyPress={onKey} 
 					onChange={onInput} />
-					<button onClick={onClick} className='w-30 grow f4 link ph3 pv2 dib dark-gray bg-gold'>Detect</button>
+					<button onClick={onClick} className='mv1 f6 f5-l button-reset fl pv3 tc bn bg-animate hover-bg-dark-gray hover-gold pointer w-100 w-25-m w-20-l br2-ns br--right-ns dark-gray bg-gold'>Trim</button>
 				</div>
 			</div>
 		</div>		

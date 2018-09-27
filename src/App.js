@@ -3,17 +3,15 @@ import './App.css';
 import Header from './Components/Header/Header'
 import Form from './Components/Form/Form'
 import Footer from './Components/Footer/Footer'
-
-
+import Result from './Components/Result/Result'
 
 class App extends Component {
 
-  
   constructor(){
   	super();
   	this.state={
   		input: '',
-  		result_status: false,
+  		result_status: true,
   		result: '',
   	}
   }
@@ -49,12 +47,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App bg-dark-gray">
-        <Header />
-        <Form 
+      <div className="App vh-100 w-100 dt bg-dark-gray">
+        <Header className= "dtc " />
+        <Form className="dtc"
 	        onClick={this.onClick} 
 	        onKey ={this.onKey} 
 	        onInput = {this.onInput} />
+	    
+	   	{(this.state.result_status)?
+	    	<Result className="dtc" result={this.state.result} /> : <div />
+	 	}
         <Footer />
       </div>
     );
