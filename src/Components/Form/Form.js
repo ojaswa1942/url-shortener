@@ -3,8 +3,6 @@ import React from 'react';
 
 const Form = ({onInput, onClick, onKey}) =>{
 	return(
-		<div className="">
-
 			<div className='center '>
 				<div className='form gradient-pattern center pa4 mw8'>
 					<input type='text' placeholder='Enter URL here' 
@@ -13,8 +11,7 @@ const Form = ({onInput, onClick, onKey}) =>{
 					onChange={onInput} />
 					<button onClick={onClick} className='mv1 f6 f5-l button-reset fl pv3 tc bn bg-animate hover-bg-dark-gray hover-gold pointer w-100 w-25-m w-20-l br2-ns br--right-ns dark-gray bg-gold'>Trim</button>
 				</div>
-			</div>
-		</div>		
+			</div>		
 	);
 }
 export default Form;

@@ -11,7 +11,7 @@ class App extends Component {
   	super();
   	this.state={
   		input: '',
-  		result_status: true,
+  		result_status: false,
   		result: '',
   	}
   }
