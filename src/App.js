@@ -4,6 +4,7 @@ import Header from './Components/Header/Header'
 import Form from './Components/Form/Form'
 import Footer from './Components/Footer/Footer'
 import Result from './Components/Result/Result'
+import isUrl from 'is-url'
 
 class App extends Component {
 
@@ -11,14 +12,32 @@ class App extends Component {
   	super();
   	this.state={
   		input: '',
-  		result_status: true,
+  		result_status: false,
   		result: '',
   	}
   }
 
+  checkURL = () => {
+  	return isUrl(this.state.input)
+  }
+
+  checkIntegrity = () => {
+  	const error = document.getElementById('error');
+
+  	if(!this.checkURL()){
+  		error.classList.remove('hidden');
+  		return false;
+  	}
+  	else {
+  		error.classList.add('hidden');
+  		return true;
+  	}
+
+  }
+
   onInput = (event) => {
     this.setState({input: event.target.value})
-    console.log(this.state.input);
+    console.log(this.state.input); 
   }
 
   onKey = (event) => {
@@ -28,21 +47,26 @@ class App extends Component {
 
   onClick = () =>{
     console.log('Check');
-    // fetch('localhost:3001/register', {
-    //       method: 'post',
-    //       headers: {'Content-type': 'application/json'},
-    //       body: JSON.stringify({
-    //         input: this.state.input,
-    //       })
-    //     })
-    // .then(response => response.json())
-    // .then(response => {
-    //   if(response.result_status){
-    //   	this.setState({result_status: true,
-    //   					result: response.result})
-    //   }
-    // })
-    // .catch(err => console.log("There seems an error", err));
+     console.log('isURL', isUrl(this.state.input));
+    if(this.checkIntegrity()){
+    	    console.log('CheckInteg', this.checkIntegrity());
+
+	    fetch('http://localhost:3002/register', {
+	          method: 'post',
+	          headers: {'Content-type': 'application/json'},
+	          body: JSON.stringify({
+	            input: this.state.input,
+	          })
+	        })
+	    .then(response => response.json())
+	    .then(response => {
+	      if(response.result_status){
+	      	this.setState({result_status: true,
+	      					result: response.result})
+	      }
+	    })
+	    .catch(err => console.log("There seems an error", err));
+	}
   }
 
   render() {
