@@ -10,7 +10,8 @@ const db = knex({
   connection: {
   	// connectionString: process.env.DATABASE_URL,
   	// ssl: true
-    host : 'postgresql-pointy-70528',
+    host : 'localhost',
+    port: 5432,
     user : 'ojaswa',
     password : 'ojaswa',
     database : 'trimlink'
@@ -23,8 +24,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req,res)=>{res.send('it is working')});
-app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt)});
-app.get('/*', (req,res)=>{fetch.handleFetchRequest(req, res)});
+app.post('/register', (req, res) => {register.handleRegister(req, res, db)});
+app.get('/:*', (req,res)=>{fetch.handleFetchRequest(req, res)});
 
 app.listen(process.env.PORT || 3002, ()=>{
 	console.log(`We are on on port ${process.env.PORT}!`);

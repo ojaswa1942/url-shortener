@@ -1,29 +1,25 @@
+const cryptoRandomString = require('crypto-random-string');
+
 const handleRegister = (req,res,db)=>{
 	//(db, bcrypt) => (req, res) =>
-	const {email, password} = req.body;
-		if(!email || !password)
-	{
-		return res.status(400).json('Incorrect form submission');
+	const url = 'https://trimlink.herokuapp.com/'
+	const {input} = req.body;
+	if(!input){
+		return res.status(400).json({result_status: false});
 	}
-
-	db.select('email', 'hash').from('login')
-	.where({email})
-	.then(data => {
-		bcrypt.compare(password, data[0].hash, function(err, result) {
-			if(result)
-				{
-					return db.select('*').from('users')
-					.where('email', '=', email)
-					.then(user =>{
-						res.json(user[0])
-					})
-					.catch(err => res.status(400).json('Invalid User'))
-				}
-			else
-				return res.status(400).json("Invalid Credentials");
-		 })
-	})
-	.catch(err=> res.status(400).json('Invalid Credentials'))	
+	db.insert({
+		long_url: input,
+		short_url: cryptoRandomString(6),
+		date: new Date()
+	}).into('entries')
+	.returning('short_url')
+	.then(short_url =>{
+		res.status(200).json({
+			result_status: true,
+			result: url+short_url
+		})
+	})	
+	.catch(err=> res.status(400).json(err))	
 }
 
 module.exports={
