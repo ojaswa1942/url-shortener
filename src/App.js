@@ -11,7 +11,7 @@ class App extends Component {
   	super();
   	this.state={
   		input: '',
-  		result_status: false,
+  		result_status: true,
   		result: '',
   	}
   }
@@ -47,15 +47,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App vh-100 w-100 dt bg-dark-gray">
-        <Header className= "dtc " />
-        <Form className="dtc"
+      <div className="App vh-100 w-100  bg-dark-gray">
+        <Header className= " " />
+        <Form className=""
 	        onClick={this.onClick} 
 	        onKey ={this.onKey} 
 	        onInput = {this.onInput} />
 	    
 	   	{(this.state.result_status)?
-	    	<Result className="dtc" result={this.state.result} /> : <div />
+	    	<Result className="" result={this.state.result} /> : <div />
 	 	}
         <Footer />
       </div>
