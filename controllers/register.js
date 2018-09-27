@@ -1,15 +1,16 @@
-const cryptoRandomString = require('crypto-random-string');
+const randomstring = require("randomstring");
+const isUrl = require("is-url");
 
 const handleRegister = (req,res,db)=>{
 	//(db, bcrypt) => (req, res) =>
-	const url = 'https://trimlink.herokuapp.com/'
+	const url = 'http://localhost:3002/'
 	const {input} = req.body;
-	if(!input){
+	if(!isUrl(input)){
 		return res.status(400).json({result_status: false});
 	}
 	db.insert({
 		long_url: input,
-		short_url: cryptoRandomString(6),
+		short_url: randomstring.generate(6),
 		date: new Date()
 	}).into('entries')
 	.returning('short_url')
