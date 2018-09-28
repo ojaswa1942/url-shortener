@@ -1,6 +1,7 @@
 {
   "name": "url-shortner",
   "version": "0.1.0",
+  "main": "server.js",
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",

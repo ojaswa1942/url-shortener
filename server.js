@@ -23,7 +23,7 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/build'));
+app.use(express.static(__dirname + '/build_servestatic'));
 
 app.get('/', (req,res)=>{res.sendFile('index.html');});
 app.post('/register', (req, res) => {register.handleRegister(req, res, db)});
