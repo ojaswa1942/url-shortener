@@ -17,7 +17,7 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "start-react": "react-scripts start",
     "build": "react-scripts build"
   },
