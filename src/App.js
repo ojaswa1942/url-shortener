@@ -51,7 +51,7 @@ class App extends Component {
     if(this.checkIntegrity()){
     	    console.log('CheckInteg', this.checkIntegrity());
 
-	    fetch('http://localhost:3002/register', {
+	    fetch('https://trimlink.herokuapp.com/register', {
 	          method: 'post',
 	          headers: {'Content-type': 'application/json'},
 	          body: JSON.stringify({
