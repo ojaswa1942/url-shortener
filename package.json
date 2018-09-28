@@ -16,11 +16,9 @@
     "tachyons": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "start-server": "nodemon server.js",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "nodemon server.js",
+    "start-react": "react-scripts start",
+    "build": "react-scripts build"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"
