@@ -46,8 +46,8 @@ class App extends Component {
   }
 
   onClick = () =>{
-    console.log('Check');
-     console.log('isURL', isUrl(this.state.input));
+    this.setState({result_status: false,
+                  result: ''});
     if(this.checkIntegrity()){
     	    console.log('CheckInteg', this.checkIntegrity());
 

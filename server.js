@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 app.get('/', (req,res)=>{res.send('it is working')});
 app.post('/register', (req, res) => {register.handleRegister(req, res, db)});
-app.get('/:*', (req,res)=>{fetch.handleFetchRequest(req, res)});
+app.get('/*', (req,res)=>{fetch.handleFetchRequest(req, res, db)});
 
 app.listen(process.env.PORT || 3002, ()=>{
 	console.log(`We are on on port ${process.env.PORT}!`);
