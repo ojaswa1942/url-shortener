@@ -4,12 +4,12 @@ A service to shorten urls, like goo.gl and bit.ly
 
 ### INSTALLATION
 
-npm install
+`npm install`
 
 ### USAGE
 
-npm start
+`npm start`
 
 #### RUNNING ONLY REACT FRONT-END
 
-npm run start-react
+`npm run start-react`
