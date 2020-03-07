@@ -3,7 +3,7 @@ const isUrl = require("is-url");
 
 const handleRegister = (req,res,db)=>{
 	//(db, bcrypt) => (req, res) =>
-	const url = 'https://trimlink.herokuapp.com/'
+	const url = 'https://url.ojaswa.com/'
 	const {input} = req.body;
 	if(!isUrl(input)){
 		return res.status(400).json({result_status: false});

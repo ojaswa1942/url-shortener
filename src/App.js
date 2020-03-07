@@ -37,7 +37,6 @@ class App extends Component {
 
   onInput = (event) => {
     this.setState({input: event.target.value})
-    console.log(this.state.input); 
   }
 
   onKey = (event) => {
@@ -49,7 +48,6 @@ class App extends Component {
     this.setState({result_status: false,
                   result: ''});
     if(this.checkIntegrity()){
-    	    console.log('CheckInteg', this.checkIntegrity());
 
 	    fetch('https://trimlink.herokuapp.com/register', {
 	          method: 'post',
@@ -63,6 +61,7 @@ class App extends Component {
 	      if(response.result_status){
 	      	this.setState({result_status: true,
 	      					result: response.result})
+          navigator.clipboard.writeText(response.result);
 	      }
 	    })
 	    .catch(err => console.log("There seems an error", err));
