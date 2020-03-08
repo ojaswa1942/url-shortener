@@ -30,4 +30,5 @@ jobs:
     - name: Deploy to server
       run: |
         scp -r -i "$HOME/KEY" -o StrictHostKeyChecking=no ./build ops@url.ojaswa.com:/var/www/url/
+        scp -r -i "$HOME/KEY" -o StrictHostKeyChecking=no ./controllers ops@url.ojaswa.com:/var/www/url/
         scp -r -i "$HOME/KEY" -o StrictHostKeyChecking=no ./server.js ops@url.ojaswa.com:/var/www/url/
