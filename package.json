@@ -9,13 +9,13 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "is-url": "^1.2.4",
-    "knex": "^0.20.11",
-    "pg": "^7.18.2",
+    "knex": "^0.21.1",
+    "pg": "^8.0.3",
     "randomstring": "^1.1.5",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
-    "tachyons": "^4.11.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "tachyons": "^4.12.0"
   },
   "scripts": {
     "start": "node server.js",
@@ -23,7 +23,7 @@
     "build": "react-scripts build"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.3"
   },
   "browserslist": {
     "production": [
