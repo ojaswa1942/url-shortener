@@ -70,7 +70,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App vh-100 w-100  bg-dark-gray">
+      <div className="App w-100 bg-dark-gray">
         <Header className= " " />
         <Form className=""
 	        onClick={this.onClick} 

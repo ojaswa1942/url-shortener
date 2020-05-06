@@ -4,12 +4,9 @@ A service to shorten urls, like goo.gl and bit.ly
 
 ### INSTALLATION
 
-`npm install`
+`yarn install`
 
 ### USAGE
-
-`npm start`
-
-#### RUNNING ONLY REACT FRONT-END
-
-`npm run start-react`
+- Build the front-end: `yarn build`
+- Start the server: `yarn start`
+- For opening react-dev server: `yarn run front`

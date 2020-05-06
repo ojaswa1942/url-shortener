@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "start-react": "react-scripts start",
+    "front": "react-scripts start",
     "build": "react-scripts build"
   },
   "devDependencies": {
