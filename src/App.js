@@ -49,7 +49,7 @@ class App extends Component {
                   result: ''});
     if(this.checkIntegrity()){
 
-	    fetch('https://trimlink.herokuapp.com/register', {
+	    fetch('https://url.ojaswa.com/register', {
 	          method: 'post',
 	          headers: {'Content-type': 'application/json'},
 	          body: JSON.stringify({
